@@ -19,4 +19,5 @@ def frec_abs(datos_entrada):
             idx = clases.index(elemento)        
             fa_absoluta[idx] += 1
 
-    return clases, fa_absoluta  
+    return clases, fa_absoluta 
+ 
