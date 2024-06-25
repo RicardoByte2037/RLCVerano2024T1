@@ -30,3 +30,4 @@ def plot_hist(marcas_clase, frecuencias, marcas_texto):
 
     # Muestra el gráfico
     plt.show()
+    
