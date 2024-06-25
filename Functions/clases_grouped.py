@@ -31,7 +31,8 @@ def clases_grouped(datos):
     rango = max(datos) - min(datos)
     
     # Calcula el número de clases utilizando la fórmula de Sturges
-    clases = 1 + 3.3 * (math.log(len(datos))/2)
+    # Antiguo: clases = 1 + 3.3 * (math.log(len(datos))/2)
+    clases = 1+math.log(len(datos)*3.3)
     
     # Redondea el número de clases al entero más cercano y resta 1 para evitar clases vacías
     clases_redondear = round(clases)-1
@@ -58,4 +59,4 @@ def clases_grouped(datos):
     clases_num = list(range(1, clases_redondear + 1))
     
     # Devuelve las clases, límites inferiores, superiores y marcas de clase
-    return clases_num, [round(x, 3) for x in lim_inf], [round(x, 3) for x in lim_sup], [round(x, 3) for x in mrks]
+    return clases_num, [round(x, 3) for x in lim_inf], [round(x, 3) for x in lim_sup], [round(x, 3) for x in mrks], clases
